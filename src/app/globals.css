@@ -1,1 +1,21 @@
 @import "tailwindcss";
+@plugin "tailwindcss-motion";
+
+@theme {
+  /* New custom palette */
+  --color-deep-navy: #101D33;
+  --color-deep-gold: #B58E4F;
+  --color-pale-gold: #D4AF37;
+  --color-golden-shadow: #958026;
+  --color-general-body: #0a0f1a;
+  --color-test:#e3e6ee;
+
+  /* Mapped to existing classes */
+  --color-primary: var(--color-deep-gold); /* Main brand color */
+  --color-secondary: var(--color-pale-gold); /* Accent color */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}

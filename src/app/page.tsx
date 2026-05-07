@@ -27,43 +27,28 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="w-full bg-deep-navy py-16 px-6 md:px-12 2xl:px-24">
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
-
+      <section id="about" className="w-full bg-deep-navy py-16 px-10 md:px-12 2xl:px-24">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-10 border">
           {/* Left Column - Profile & Info */}
-          <div className="flex flex-col gap-6 p-8 bg-deep-navy  shadow-sm border border-red">
-
+          <div className="flex flex-col gap-6 p-8 bg-deep-navy  shadow-sm border">
             <Image 
-              src="/images/Me.jpeg" 
+              src="/images/Me_Casual.png" 
               alt="Jose Javier" 
               width={400} 
               height={400} 
               className="w-32 md:w-64 lg:w-96 rounded-md mx-auto object-cover border-2 border-secondary"
             />
-
           </div>
+         
 
           {/* Right Column - Bio & Sections */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
-
+          <div className="lg:col-span-2 flex flex-col gap-8 border border-red-300 ">
             {/* Bio Box */}
-            <div className="bg-[#1B1B1C] rounded-2xl rounded-tr-[50px] rounded-bl-[50px] p-8 border-l-4 border-primary shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4">About me</h3>
-              <p className="text-gray-300 leading-relaxed">
-                I am a dedicated and passionate software developer with a strong foundation in front-end technologies such as HTML, CSS, and JavaScript. I enjoy creating user-friendly and accessible web applications. Currently pursuing a post-graduate degree in Information Technology Solutions at Humber College. I am eager to apply my skills in real-world projects and continue learning about the latest industry trends.
+            <div className="p-15 border">
+              <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-22 w-fit mx-auto bg-cover-letters-title bg-center bg-cover">About me</h3>
+              <p className="text-primary text-lg  text-center  leading-relaxed  bg-cover-letters-general bg-cover bg-no-repeat bg-center px-20 py-8 ">
+                Beyond the screen, I am an active person who loves dancing, working out, and regular exercise to stay energized. When I am not moving, you can find me analyzing my next move in a game of chess. I also deeply enjoy sipping a great coffee or a fine wine while spending quality time with my friends and beloved family.
               </p>
-            </div>
-
-            {/* Two Column Grid for Hobbies & Experience */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-[#1B1B1C] p-6 rounded-xl border border-gray-800">
-                <h3 className="text-xl font-bold text-secondary mb-4 border-b border-gray-700 pb-2">Hobbies & Passions</h3>
-                <ul className="list-disc list-inside text-gray-300 space-y-2 marker:text-primary"><li>Dancing</li><li>Travel</li><li>Technology</li><li>Drawing</li></ul>
-              </div>
-              <div className="bg-[#1B1B1C] p-6 rounded-xl border border-gray-800">
-                <h3 className="text-xl font-bold text-secondary mb-4 border-b border-gray-700 pb-2">Experience</h3>
-                <ul className="list-disc list-inside text-gray-300 space-y-2 marker:text-primary"><li>Walmart</li><li>TATA</li><li>Infotec</li><li>Scotiabank</li></ul>
-              </div>
             </div>
           </div>
         </div>

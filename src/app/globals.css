@@ -19,8 +19,13 @@
   /* Custom Background Images */
   --meCasual: url('/images/Me_Casual.png');
   --meProfessional: url('/images/Me_Professional.png');
-  --background-image-cover-letters-title: url('/images/backCoverLetters2.png');
-  --background-image-cover-letters-general: url('/images/backCoverLetters4.png');
+  --background-image-cover-casual: url('/images/casual_background.png');
+  --background-image-cover-letters-title-one: url('/images/backCoverLetters2.png');
+  --background-image-cover-letters-title-two: url('/images/backCoverLetters3.png');
+  --background-image-cover-letters-general-one: url('/images/backCoverLetters4.png');
+    --background-image-cover-letters-general-two: url('/images/backCoverLetters4.png');
+
+
 
 }
 

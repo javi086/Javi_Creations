@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { interests } from "../data/interests";
+import { useState } from "react";
 
 export default function Home() {
+  // State to hold the currently selected hobby, defaulting to the first item (Dancing)
+  const [selectedInterest, setSelectedInterest] = useState(interests[0]);
+
   return (
     <main className="flex min-h-dvh w-full flex-col items-center pt-12 md:py-24 text-gray-200">
 
@@ -27,30 +34,65 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="w-full bg-deep-navy py-16 px-10 md:px-12 2xl:px-24">
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-10 border">
+      <section id="about" className="  w-full bg-deep-navy py-16 px-10 md:px-12 2xl:px-24">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
           {/* Left Column - Profile & Info */}
           <div className="flex flex-col gap-6 p-8 bg-deep-navy  shadow-sm border">
-            <Image 
-              src="/images/Me_Casual.png" 
-              alt="Jose Javier" 
-              width={400} 
-              height={400} 
+            <Image
+              src="/images/Me_Casual.png"
+              alt="Jose Javier"
+              width={400}
+              height={400}
+              priority
               className="w-32 md:w-64 lg:w-96 rounded-md mx-auto object-cover border-2 border-secondary"
             />
           </div>
-         
+
 
           {/* Right Column - Bio & Sections */}
-          <div className="lg:col-span-2 flex flex-col gap-8 border border-red-300 ">
+          <div className="lg:col-span-2 flex flex-col gap-8 ">
+
             {/* Bio Box */}
-            <div className="p-15 border">
-              <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-22 w-fit mx-auto bg-cover-letters-title bg-center bg-cover">About me</h3>
-              <p className="text-primary text-lg  text-center  leading-relaxed  bg-cover-letters-general bg-cover bg-no-repeat bg-center px-20 py-8 ">
+            <div className="py-5 ">
+              <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-8 md:px-22 py-2 md:py-0 w-fit mx-auto bg-white bg-none md:bg-transparent md:bg-cover-letters-title-one bg-center bg-cover rounded-xl md:rounded-none">
+                About me
+              </h3>
+              <p className="w-full px-8 md:px-22 py-6 text-primary text-lg  text-center  leading-relaxed bg-white bg-none md:bg-transparent md:bg-cover-letters-general-one bg-cover bg-no-repeat bg-center overflow-hidden text-ellipsis rounded-xl md:rounded-none">
                 Beyond the screen, I am an active person who loves dancing, working out, and regular exercise to stay energized. When I am not moving, you can find me analyzing my next move in a game of chess. I also deeply enjoy sipping a great coffee or a fine wine while spending quality time with my friends and beloved family.
               </p>
             </div>
+
+            {/* Hobbies & Passions */}
+            <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-8 md:px-38 py-2 md:py-0 w-fit mx-auto bg-white bg-none md:bg-transparent md:bg-cover-letters-title-one bg-center bg-cover rounded-xl md:rounded-none">
+              Hobbies & Passions
+            </h3>
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-0 ">
+              <div className="flex flex-col ">
+                <ul className="space-y-4 md:space-y-11  list-none text-3xl font-bold text-center text-primary">
+                  {interests.map((interest) => (
+                    <li
+                      key={interest.id}
+                      onMouseOver={() => setSelectedInterest(interest)}
+                      className={`bg-white bg-none md:bg-transparent md:bg-cover-letters-title-two bg-cover bg-no-repeat bg-center overflow-hidden cursor-pointer transition-transform hover:scale-105 py-3 md:py-0 rounded-lg md:rounded-none ${selectedInterest.id === interest.id ? "text-secondary drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]" : "text-primary opacity-80"
+                        }`}
+                    >
+                      {interest.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="w-full lg:col-span-2 flex flex-col  justify-center items-center bg-white bg-none md:bg-transparent md:bg-cover-letters-general-two bg-center bg-contain bg-no-repeat rounded-xl md:rounded-none">
+                <p className="px-8 md:px-12 py-6 text-primary text-base text-center  leading-relaxed">
+                  {selectedInterest.description}
+                </p>
+              </div>
+            </div>
+
           </div>
+
+
+
         </div>
       </section>
 

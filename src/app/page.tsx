@@ -34,17 +34,32 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="  w-full bg-deep-navy py-16 px-10 md:px-12 2xl:px-24">
+      <section id="about_Personally" className="w-full bg-deep-navy py-16 px-10 md:px-12 2xl:px-24">
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
-          {/* Left Column - Profile & Info */}
-          <div className="flex flex-col gap-6 p-8 bg-deep-navy  shadow-sm border">
+          {/* Left Column - Profile & Toggle */}
+          <div className="flex flex-col items-center gap-6 p-8 bg-deep-navy shadow-sm border rounded-xl">
+            <label className="inline-flex items-center cursor-pointer">
+              <span className="select-none text-sm font-medium text-primary">Professionally</span>
+              <input type="checkbox" value="" className="sr-only peer" />
+              <div className="relative mx-3 w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/30 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+              <span className="select-none text-sm font-medium text-primary">Personally</span>
+            </label>
+             {/* Image from professional to personal */}
+             <Image 
+              src="/images/Me_Professional.png"
+              alt="Jose Javier"
+              width={400}
+              height={400}
+              priority
+              className="w-32 md:w-64 lg:w-96 rounded-md mx-auto object-cover border-2 border-secondary"
+              />
             <Image
               src="/images/Me_Casual.png"
               alt="Jose Javier"
               width={400}
               height={400}
               priority
-              className="w-32 md:w-64 lg:w-96 rounded-md mx-auto object-cover border-2 border-secondary"
+              className="w-32 md:w-64 lg:w-96 rounded-md mx-auto object-cover border-2 border-secondary invisible"
             />
           </div>
 
@@ -55,7 +70,7 @@ export default function Home() {
             {/* Bio Box */}
             <div className="py-5 ">
               <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-8 md:px-22 py-2 md:py-0 w-fit mx-auto bg-white bg-none md:bg-transparent md:bg-cover-letters-title-one bg-center bg-cover rounded-xl md:rounded-none">
-                About me
+                Personally
               </h3>
               <p className="w-full px-8 md:px-22 py-6 text-primary text-lg  text-center  leading-relaxed bg-white bg-none md:bg-transparent md:bg-cover-letters-general-one bg-cover bg-no-repeat bg-center overflow-hidden text-ellipsis rounded-xl md:rounded-none">
                 Beyond the screen, I am an active person who loves dancing, working out, and regular exercise to stay energized. When I am not moving, you can find me analyzing my next move in a game of chess. I also deeply enjoy sipping a great coffee or a fine wine while spending quality time with my friends and beloved family.

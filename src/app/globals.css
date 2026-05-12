@@ -1,1 +1,35 @@
 @import "tailwindcss";
+@plugin "tailwindcss-motion";
+
+@theme {
+  /* New custom palette */
+  --color-deep-navy: #101D33;
+  --color-deep-gold: #B58E4F;
+  --color-pale-gold: #D4AF37;
+  --color-golden-shadow: #958026;
+  --color-general-body: #0a0f1a;
+  --color-blue-background: #2f3b4f;
+  --color-test:#2f3b4f;
+
+  /* Mapped to existing classes */
+  --color-primary: var(--color-deep-gold); /* Main brand color */
+  --color-secondary: var(--color-pale-gold); /* Accent color */
+  --color-third: var(--color-deep-navy);
+
+  /* Custom Background Images */
+  --meCasual: url('/images/Me_Casual.png');
+  --meProfessional: url('/images/Me_Professional.png');
+  --background-image-cover-casual: url('/images/casual_background.png');
+  --background-image-cover-letters-title-one: url('/images/backCoverLetters2.png');
+  --background-image-cover-letters-title-two: url('/images/backCoverLetters3.png');
+  --background-image-cover-letters-general-one: url('/images/backCoverLetters4.png');
+    --background-image-cover-letters-general-two: url('/images/backCoverLetters4.png');
+
+
+
+}
+
+
+html {
+  scroll-behavior: smooth;
+}

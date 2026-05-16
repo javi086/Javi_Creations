@@ -5,6 +5,7 @@ import Image from "next/image";
 import { interests } from "../data/interests";
 import { projects } from "../data/projects";
 import { companies } from "../data/companies";
+import { technologies } from "../data/technologies";
 import { useState } from "react";
 
 export default function Home() {
@@ -23,21 +24,37 @@ export default function Home() {
 
       {/* Initial banner*/}
       <section className="flex flex-col items-center text-center justify-center m-4 md:m-12 w-full max-w-5xl bg-deep-navy shadow-sm shadow-deep-gold rounded-3xl py-20 px-6 ">
-        <h1 className="text-5xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-pale-gold to-general-body bg-clip-text text-transparent  ">
-          Hi, I'm Javier
+        <h1 className="text-5xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-pale-gold  to-yellow-950">
+          Hi, I&apos;m Javier
         </h1>
-        <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-primary via-pale-gold to-general-body bg-clip-text text-transparent font-bold mb-6">
+        <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-primary via-pale-gold to-yellow-950 bg-clip-text text-transparent font-bold mb-6">
           Full Stack Software Developer
         </h2>
-        <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
-          I build high-quality web and mobile applications. Welcome to my personal portfolio where you can explore my projects, learn more about my background, and try out my interactive web applications.
-        </p>
+        <p className="text-lg text-gray-400 max-w-4xl leading-relaxed">
+          I am a Toronto-based Full Stack Software Developer with over 15 years of experience in the IT industry. My unique professional background combines years of leadership as a Scrum Master and Project Manager at global organizations like Walmart, TATA and Scotiabank with a deep passion for building modern web and mobile solutions, always guided by SOLID, KISS, and DRY principles. I specialize in the full Software Development Life Cycle—from gathering requirements with stakeholders to moving solutions into production—bridging the gap between high-level project management and robust software engineering.        </p>
+        <div className="flex flex-col justify-center sm:flex-row gap-2 w-full h-12 mt-4 ">
+          {
+            technologies.map((technology) => (
+              <div key={technology.id} className="flex flex-col items-center gap-2">
+                <div className="bg-white p-3 rounded-xl flex items-center justify-center animate-pulse space-x-4">
+                  <Image
+                    src={technology.path}
+                    alt={technology.name}
+                    width={45}
+                    height={10}
+                  />
+                </div>
+                <p className="text-gray-400 leading-relaxed text-body">{technology.name}</p>
+              </div>
+            ))
+          }
+        </div>
       </section>
 
       <section className="mt-8 mb-24">
         <div className="flex flex-col sm:flex-row gap-4 space-x-4">
           <a href="#about" className="text-xl md:text-2xl border-2 border-primary rounded-full px-10 py-4 text-primary font-bold hover:bg-primary hover:text-deep-navy hover:shadow-[0_0_20px_rgba(181,142,79,0.4)] hover:-translate-y-1 transition-all duration-300">
-            Let's Explore!
+            Let&apos;s Explore!
           </a>
         </div>
       </section>
@@ -48,18 +65,18 @@ export default function Home() {
           {/* Left Column - Profile & Toggle */}
           <div className="flex flex-col items-center gap-6 p-8 bg-deep-navy shadow-sm border rounded-xl">
             <label className="inline-flex items-center cursor-pointer">
-              <span className="select-none text-sm font-medium text-primary">Professionally</span>
-              <input 
-                type="checkbox" 
-                className="sr-only peer" 
+              <span className="select-none text-sm font-medium text-primary">Professional</span>
+              <input
+                type="checkbox"
+                className="sr-only peer"
                 checked={isPersonally}
                 onChange={(e) => setIsPersonally(e.target.checked)}
               />
               <div className="relative mx-3 w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/30 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-              <span className="select-none text-sm font-medium text-primary">Personally</span>
+              <span className="select-none text-sm font-medium text-primary">Personal</span>
             </label>
             {/* Image from professional to personal */}
-            <Image 
+            <Image
               src={isPersonally ? "/images/Me_Casual.png" : "/images/Me_Professional.png"}
               alt="Jose Javier"
               width={400}
@@ -121,30 +138,31 @@ export default function Home() {
                     As a Full Stack Software Developer, I am passionate about building scalable, user-friendly web and mobile applications. I specialize in modern web technologies and always aim to deliver high-quality software products. I enjoy tackling complex challenges and constantly learning new tools and frameworks.
                   </p>
                 </div>
-                   {/* Companies */}
-                   <div className="flex flex-col gap-6">
-                  <h3 className="text-3xl font-semibold text-secondary px-2">
-                      Companies
-                  </h3>
-                  <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                 <hr className="border-sm border-dashed border-gray-400" />
+
+                {/* Companies */}
+                <div className="flex flex-col gap-6 ">
+                  <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 ">
                     {/* Project List */}
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 ">
+                      <h3 className="text-3xl font-semibold text-secondary px-2 pb-2">
+                        Companies
+                      </h3>
                       {companies.map((company) => (
                         <button
                           key={company.id}
                           onMouseOver={() => setSelectedCompany(company)}
-                          className={`text-left px-6 py-4 rounded-xl transition-all duration-300 border ${
-                            selectedCompany.id === company.id
+                          className={`text-left px-6 py-4 rounded-xl transition-all duration-300 border ${selectedCompany.id === company.id
                               ? "bg-primary/10 border-primary text-secondary shadow-[0_0_15px_rgba(212,175,55,0.15)]"
-                              : "bg-transparent border-transparent text-gray-400 hover:bg-white/5 hover:text-gray-200"
-                          }`}
+                              : "bg-transparent border-gray-700 text-gray-400 hover:bg-white/5 hover:text-gray-200"
+                            }`}
                         >
                           <span className="text-lg font-medium">{company.company_name}</span>
                         </button>
                       ))}
                     </div>
-
-                    {/* Project Description Container */}
+                    {/* Company Description Container */}
                     <div className="w-full lg:col-span-2 flex flex-col justify-center bg-deep-navy border border-white/10 rounded-2xl p-4 shadow-inner">
                       <h2 className="font-bold">{selectedCompany.role}</h2>
                       <p className="text-gray-300 text-base leading-relaxed">
@@ -152,27 +170,26 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                </div>  
+                </div>
 
-              <hr className="border-sm border-dashed border-gray-400" />
+                <hr className="border-sm border-dashed border-gray-400" />
 
                 {/* Projects */}
                 <div className="flex flex-col gap-6">
-                  <h3 className="text-3xl font-semibold text-secondary px-2">
-                      College Projects
-                  </h3>
                   <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {/* Project List */}
                     <div className="flex flex-col gap-3">
+                      <h3 className="text-3xl font-semibold text-secondary px-2">
+                    College Projects
+                      </h3>
                       {projects.map((project) => (
                         <button
                           key={project.id}
                           onMouseOver={() => setSelectedProject(project)}
-                          className={`text-left px-6 py-4 rounded-xl transition-all duration-300 border ${
-                            selectedProject.id === project.id
+                          className={`text-left px-6 py-4 rounded-xl transition-all duration-300 border ${selectedProject.id === project.id
                               ? "bg-primary/10 border-primary text-secondary shadow-[0_0_15px_rgba(212,175,55,0.15)]"
-                              : "bg-transparent border-transparent text-gray-400 hover:bg-white/5 hover:text-gray-200"
-                          }`}
+                              : "bg-transparent border-gray-700 text-gray-400 hover:bg-white/5 hover:text-gray-200"
+                            }`}
                         >
                           <span className="text-lg font-medium">{project.project_name}</span>
                         </button>
@@ -180,7 +197,7 @@ export default function Home() {
                     </div>
 
                     {/* Project Description Container */}
-                    <div className="w-full lg:col-span-2 flex flex-col justify-center bg-deep-navy border border-white/10 rounded-2xl p-4 shadow-inner">
+                    <div className="w-full lg:col-span-2 flex flex-col bg-deep-navy border border-white/10 rounded-2xl p-4  shadow-inner">
                       <p className="text-gray-300 text-base leading-relaxed">
                         {selectedProject.description}
                       </p>

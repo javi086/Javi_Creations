@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between p-6 bg-deep-navy shadow-sm  shadow-golden-shadow">
       <Link href="/" className="text-2xl text-primary text-shadow-lg  font-bold ">
-        Javier's Portfolio
+        Javier&apos;s Portfolio
       </Link>
       
       <div className="flex items-center gap-6 text-secondary">

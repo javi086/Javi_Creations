@@ -92,11 +92,11 @@ export default function Home() {
             {isPersonally ? (
               <>
                 {/* Bio Box */}
-                <div className="py-5 ">
-                  <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-8 md:px-22 py-2 md:py-0 w-fit mx-auto bg-white bg-none md:bg-transparent md:bg-cover-letters-title-one bg-center bg-cover rounded-xl md:rounded-none">
+                <div className="py-5">
+                  <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-8 md:px-20 py-2 md:py-0 w-fit mx-auto bg-white bg-none md:bg-transparent md:bg-cover-letters-title-one bg-center bg-cover rounded-xl md:rounded-none">
                     Personal Profile
                   </h3>
-                  <p className="w-full px-8 md:px-22 py-6 text-primary text-lg  text-center  leading-relaxed bg-white bg-none md:bg-transparent md:bg-cover-letters-general-one bg-cover bg-no-repeat bg-center overflow-hidden text-ellipsis rounded-xl md:rounded-none">
+                  <p className="w-full px-8 md:px-20 py-6 text-primary text-lg text-center leading-relaxed bg-white bg-none md:bg-transparent md:bg-cover-letters-general-one bg-cover bg-no-repeat bg-center overflow-hidden text-ellipsis rounded-xl md:rounded-none">
                     Beyond the screen, I am an active person who loves dancing, working out, and regular exercise to stay energized. When I am not moving, you can find me analyzing my next move in a game of chess. I also deeply enjoy sipping a great coffee or a fine wine while spending quality time with my friends and beloved family.
                   </p>
                 </div>
@@ -104,7 +104,7 @@ export default function Home() {
                 {/* Hobbies & Passions */}
                 <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-8 md:px-38 py-2 md:py-0 w-fit mx-auto bg-white bg-none md:bg-transparent md:bg-cover-letters-title-one bg-center bg-cover rounded-xl md:rounded-none">
                   Hobbies & Passions
-                </h3>
+                </h3> 
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-0 ">
                   <div className="flex flex-col ">
                     <ul className="space-y-4 md:space-y-11  list-none text-3xl font-bold text-center text-primary">

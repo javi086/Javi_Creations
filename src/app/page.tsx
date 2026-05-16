@@ -31,23 +31,24 @@ export default function Home() {
           Full Stack Software Developer
         </h2>
         <p className="text-lg text-gray-400 max-w-4xl leading-relaxed">
-          I am a Toronto-based Full Stack Software Developer with over 15 years of experience in the IT industry. My unique professional background combines years of leadership as a Scrum Master and Project Manager at global organizations like Walmart, TATA and Scotiabank with a deep passion for building modern web and mobile solutions, always guided by SOLID, KISS, and DRY principles. I specialize in the full Software Development Life Cycle—from gathering requirements with stakeholders to moving solutions into production—bridging the gap between high-level project management and robust software engineering.        </p>
-        <div className="flex flex-col justify-center sm:flex-row gap-2 w-full h-12 mt-4 ">
-          {
-            technologies.map((technology) => (
-              <div key={technology.id} className="flex flex-col items-center gap-2">
-                <div className="bg-white p-3 rounded-xl flex items-center justify-center animate-pulse space-x-4">
-                  <Image
-                    src={technology.path}
-                    alt={technology.name}
-                    width={45}
-                    height={10}
-                  />
-                </div>
-                <p className="text-gray-400 leading-relaxed text-body">{technology.name}</p>
+          I am a Toronto-based Full Stack Software Developer with over 15 years of experience in the IT industry. My unique professional background combines years of leadership as a Scrum Master and Project Manager at global organizations like Walmart, TATA and Scotiabank with a deep passion for building modern web and mobile solutions, always guided by SOLID, KISS, and DRY principles. I specialize in the full Software Development Life Cycle—from gathering requirements with stakeholders to moving solutions into production—bridging the gap between high-level project management and robust software engineering. </p>
+        <div className="w-full mt-8 grid grid-cols-4 lg:flex lg:flex-row lg:justify-center lg:items-start gap-4">
+          {technologies.map((technology) => (
+            <div key={technology.id} className="flex flex-col items-center text-center gap-2 ">
+              <div className="bg-white p-3 rounded-xl flex items-center justify-center animate-pulse w-16 h-16 shadow-md shadow-black/20 border">
+                <Image
+                  src={technology.path}
+                  alt={technology.name}
+                  width={45}
+                  height={45}
+                  className="object-contain"
+                />
               </div>
-            ))
-          }
+              <p className="text-gray-400 text-xs md:text-sm font-medium leading-tight">
+                {technology.name}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -104,7 +105,7 @@ export default function Home() {
                 {/* Hobbies & Passions */}
                 <h3 className="text-4xl font-bold text-secondary text-center mb-8 px-8 md:px-38 py-2 md:py-0 w-fit mx-auto bg-white bg-none md:bg-transparent md:bg-cover-letters-title-one bg-center bg-cover rounded-xl md:rounded-none">
                   Hobbies & Passions
-                </h3> 
+                </h3>
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-0 ">
                   <div className="flex flex-col ">
                     <ul className="space-y-4 md:space-y-11  list-none text-3xl font-bold text-center text-primary">
@@ -138,8 +139,8 @@ export default function Home() {
                     As a Full Stack Software Developer, I am passionate about building scalable, user-friendly web and mobile applications. I specialize in modern web technologies and always aim to deliver high-quality software products. I enjoy tackling complex challenges and constantly learning new tools and frameworks.
                   </p>
                 </div>
-                
-                 <hr className="border-sm border-dashed border-gray-400" />
+
+                <hr className="border-sm border-dashed border-gray-400" />
 
                 {/* Companies */}
                 <div className="flex flex-col gap-6 ">
@@ -154,8 +155,8 @@ export default function Home() {
                           key={company.id}
                           onMouseOver={() => setSelectedCompany(company)}
                           className={`text-left px-6 py-4 rounded-xl transition-all duration-300 border ${selectedCompany.id === company.id
-                              ? "bg-primary/10 border-primary text-secondary shadow-[0_0_15px_rgba(212,175,55,0.15)]"
-                              : "bg-transparent border-gray-700 text-gray-400 hover:bg-white/5 hover:text-gray-200"
+                            ? "bg-primary/10 border-primary text-secondary shadow-[0_0_15px_rgba(212,175,55,0.15)]"
+                            : "bg-transparent border-gray-700 text-gray-400 hover:bg-white/5 hover:text-gray-200"
                             }`}
                         >
                           <span className="text-lg font-medium">{company.company_name}</span>
@@ -180,15 +181,15 @@ export default function Home() {
                     {/* Project List */}
                     <div className="flex flex-col gap-3">
                       <h3 className="text-3xl font-semibold text-secondary px-2">
-                    College Projects
+                        College Projects
                       </h3>
                       {projects.map((project) => (
                         <button
                           key={project.id}
                           onMouseOver={() => setSelectedProject(project)}
                           className={`text-left px-6 py-4 rounded-xl transition-all duration-300 border ${selectedProject.id === project.id
-                              ? "bg-primary/10 border-primary text-secondary shadow-[0_0_15px_rgba(212,175,55,0.15)]"
-                              : "bg-transparent border-gray-700 text-gray-400 hover:bg-white/5 hover:text-gray-200"
+                            ? "bg-primary/10 border-primary text-secondary shadow-[0_0_15px_rgba(212,175,55,0.15)]"
+                            : "bg-transparent border-gray-700 text-gray-400 hover:bg-white/5 hover:text-gray-200"
                             }`}
                         >
                           <span className="text-lg font-medium">{project.project_name}</span>

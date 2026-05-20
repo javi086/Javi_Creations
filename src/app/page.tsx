@@ -31,7 +31,7 @@ export default function Home() {
       {/* Initial banner*/}
       <section className="flex flex-col items-center text-center justify-center m-4 md:m-12 w-full max-w-5xl bg-deep-navy shadow-sm shadow-deep-gold rounded-3xl py-20 px-6 ">
         <h1 className="text-5xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-pale-gold  to-yellow-950">
-          Hi, I&apos;m Javier
+          Hi, I&apos;m Javier.
         </h1>
         <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-primary via-pale-gold to-yellow-950 bg-clip-text text-transparent font-bold mb-6">
           Full Stack Software Developer

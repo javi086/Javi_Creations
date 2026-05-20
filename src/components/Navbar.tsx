@@ -12,8 +12,6 @@ export default function Navbar() {
         <span className="text-gray-300">|</span>
         <a href="#about" className="text-base md:text-lg lg:text-xl font-medium hover:text-zinc-300 transition-colors">About Me</a>
         <span className="text-gray-300">|</span>
-        <Link href="/projects" className="text-base md:text-lg lg:text-xl font-medium hover:text-zinc-300 transition-colors">Projects</Link>
-        <span className="text-gray-300">|</span>
         <Link href="/contact" className="text-base md:text-lg lg:text-xl font-medium hover:text-zinc-300 transition-colors">Contact</Link>
         </div>
     </nav>

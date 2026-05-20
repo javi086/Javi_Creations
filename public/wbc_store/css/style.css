@@ -1,0 +1,762 @@
+/******************************************************
+* GLOBAL 
+******************************************************/
+body {
+    font-size: 16px;
+    font-family: Copperplate, Papyrus, fantasy;
+    color: white;
+    padding: 0;
+    margin: 0;
+    background: url(../img/mainBackground.jpg);
+    background-repeat: repeat;
+    background-size: auto;
+    color: white;
+
+
+}
+
+/******************************************************
+*  Header & Banner
+******************************************************/
+header {
+    background-color: #1a1a1a;
+    max-width: 1200px;
+    height: 130px;
+    border-bottom: solid orange 0.5px;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1fr;
+    grid-template-areas: "leftHeader middleHeader rightHeader";
+}
+
+header * {
+    color: white;
+}
+
+header a {
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+}
+
+header a:hover {
+    color: orange;
+}
+
+#logo {
+    background: url(../img/logo.jpg) no-repeat center/cover;
+    width: 90%;
+    height: 95%;
+    border-radius: 50%;
+    box-shadow: orange 0px 0px 17px;
+    border: orange 1px solid;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#leftHeader {
+    grid-area: leftHeader;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 0.5rem;
+}
+
+#leftHeader a {
+    font-size: 2.2rem;
+}
+
+#middleHeader {
+    display: flex;
+    align-items: end;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+#middleHeader ul {
+    display: flex;
+    width: 100%;
+    background-color: #252424;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#middleHeader li {
+    display: flex;
+    align-items: center;
+}
+
+#middleHeader a {
+    padding: 0 1.2rem;
+    border-right: dotted orange 1px;
+    font-size: 1.2rem;
+}
+
+#rightHeader {
+    grid-area: rightHeader;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+#searchForm {
+    border-radius: 5px;
+}
+
+#searchForm input {
+    width: 100%;
+    text-align: right;
+    background-color: whitesmoke;
+    height: 25px;
+    color: black;
+}
+
+#bannerContainer {
+    box-shadow: orange 0px 0px 17px;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../img/bannerBackground.jpg);
+    background-repeat: repeat-x;
+    background-size: contain;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#bannerContainer h1 {
+    margin-bottom: 0;
+}
+
+#bannerContainer p {
+    margin-top: 0;
+}
+
+#mainContainer {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "indexLeftMainMenu rightProductWrapper";
+    margin: 2rem auto;
+    min-height: 700px;
+    max-width: 1200px;
+}
+
+/******************************************************
+* SHARED SIDE NAVIGATION COMPONENT
+******************************************************/
+#indexLeftMainMenu {
+    font-size: 1.2rem;
+    grid-area: indexLeftMainMenu;
+    padding: 0.5rem 1rem 0 1.2rem;
+    border: outset orange 2px;
+    background-color: #1a1a1a;
+    height: fit-content;
+}
+
+#indexLeftMainMenu p {
+    border-bottom: dashed white 1px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#indexLeftMainMenu ul {
+    list-style: circle;
+    color: orange;
+    margin: 0.5rem 0 0 0;
+    padding-left: 0.8rem;
+}
+
+#indexLeftMainMenu li {
+    margin-bottom: 0.5rem;
+    line-height: 1.3rem;
+}
+
+.leftMenuParentOption a {
+    text-decoration: none;
+    color: white;
+}
+
+#indexLeftMainMenu a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+.submenu a {
+    font-weight: bold;
+    margin-bottom: 1.1rem;
+    color: rgba(232, 228, 228, 0.944);
+}
+
+.childItem a {
+    font-size: 1rem;
+    color: rgba(243, 235, 235, 0.726);
+}
+
+#rightProductWrapper {
+    display: grid;
+    grid-area: rightProductWrapper;
+    margin-left: 4rem;
+}
+
+/******************************************************
+*  INDEX PAGE SPECIFIC GRID STYLES
+******************************************************/
+.index-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.5fr 1fr;
+    grid-template-areas:
+        "topLeftSectionProduct    topCenterSectionProduct     topRightSectionProduct"
+        "middleSectionProduct   middleSectionProduct       middleSectionProduct"
+        "lowerLeftSectionProduct  lowerRightSectionProduct lowerRightSectionProduct";
+}
+
+.productColumn {
+    border: dotted 1px orange;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0.5rem;
+    position: relative;
+}
+
+.productTittle {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+    border: orange solid 1px;
+    background: black;
+}
+
+.productLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.productLink:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(248, 245, 245, 0.4));
+}
+
+#topLeftSectionProduct {
+    grid-area: topLeftSectionProduct;
+    background-image: url(../img/Coffee.jpg);
+}
+
+#topCenterSectionProduct {
+    grid-area: topCenterSectionProduct;
+    background-image: url(../img/wine.jpg);
+}
+
+#topRightSectionProduct {
+    grid-area: topRightSectionProduct;
+    background-image: url(../img/beer.jpg);
+}
+
+#middleSectionProduct {
+    grid-area: middleSectionProduct;
+    background-image: url(../img/Wine_Basket.jpg);
+}
+
+#lowerLeftSectionProduct {
+    grid-area: lowerLeftSectionProduct;
+    background-image: url(../img/gifCard.jpg);
+}
+
+#lowerRightSectionProduct {
+    grid-area: lowerRightSectionProduct;
+    background-image: url(../img/Tours.jpg);
+}
+
+/******************************************************
+* WINE GALLERY CATALOGUE STYLES
+******************************************************/
+.wine-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "redWines"
+        "whiteWines"
+        "roseWines";
+}
+
+.wine-catalog-bg {
+    background-color: rgb(15, 14, 14);
+}
+
+#redWines {
+    grid-area: redWines;
+}
+
+#redWines .productTitle {
+    background-image: linear-gradient(to bottom right, black, rgb(61, 3, 70));
+}
+
+#whiteWines {
+    grid-area: whiteWines;
+}
+
+#whiteWines .productTitle {
+    background-image: linear-gradient(to bottom right, black, rgb(230, 225, 231));
+}
+
+#roseWines {
+    grid-area: roseWines;
+}
+
+#roseWines .productTitle {
+    background-image: linear-gradient(to bottom right, black, rgb(239, 139, 221));
+}
+
+.productContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "productTitle productTitle productTitle"
+        "product product product";
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.productTitle {
+    grid-area: productTitle;
+    height: auto;
+    width: 100%;
+    border: outset orange 0.5px;
+}
+
+.productTitle p {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    box-shadow: orange 0px 0px 6px;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.product p {
+    margin: 0.1rem;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #2c2a2a;
+}
+
+.product img {
+    height: 90%;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.productLink-card {
+    text-decoration: none;
+    color: white;
+    background-color: #2c2a2a;
+    width: 100%;
+    text-align: center;
+}
+
+.productLink-card:hover {
+    color: orange;
+}
+
+/******************************************************
+* WINE DETAIL VIEW STYLES
+******************************************************/
+#wineDetailsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "winePicture wineDescription";
+}
+
+#winePicture {
+    grid-area: winePicture;
+    padding: 0;
+    margin-right: 1rem;
+    border: outset orange 1px;
+}
+
+#winePicture img {
+    height: 100%;
+    width: 100%;
+}
+
+#wineDescriptionContainer {
+    grid-area: wineDescription;
+    background-color: #1a1a1a;
+    border: outset orange 1px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#wineDescriptionContainer h1 {
+    margin: 2rem 0 0.5rem 0;
+    font-size: 2.8rem;
+}
+
+#wineDescriptionContainer h2 {
+    color: orange;
+    font-weight: bold;
+    font-size: 2rem;
+    padding-top: 1rem;
+    margin: 0;
+}
+
+#wineDescriptionContainer h3 {
+    color: rgb(191, 188, 188);
+    margin: 0 2rem;
+    padding: 0 1rem 1.2rem 1rem;
+    border-bottom: dashed gray 1px;
+}
+
+#wineDescriptionContainer h4 {
+    color: gold;
+    margin: 0 2rem;
+    padding-bottom: 1rem;
+    border-bottom: dashed gray 1px;
+}
+
+#productDescription {
+    padding: 0.5rem 2rem 0 2rem;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    border-bottom: dashed gray 1px;
+    padding-bottom: 0.5rem;
+}
+
+#productDescription p {
+    margin: 0.5rem;
+}
+
+#productButtonsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    align-items: center;
+    gap: 1rem;
+}
+
+.productButtonStyle {
+    color: black;
+    background-color: orange;
+    padding: 0 0.5rem;
+    border-radius: 12px;
+    margin: 0 0.5rem;
+    font-size: 2rem;
+    font-family: inherit;
+}
+
+.btn-qty {
+    color: black;
+    background-color: orange;
+    border: none;
+    padding: 0.2rem 1rem;
+    border-radius: 12px;
+    font-size: 2rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.qty-display {
+    font-size: 2rem;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
+
+.btn-cart {
+    background-color: orange;
+    color: black;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cart:hover,
+.btn-qty:hover {
+    background-color: white;
+}
+
+/******************************************************
+* ACCOUNT ACCOUNT/FORM STYLES (Flexbox Alignment)
+******************************************************/
+.form-layout-center {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+#formContainer {
+    max-width: 500px;
+    width: 100%;
+    padding: 1rem 2rem;
+    border: outset orange 2px;
+    background-color: #1a1a1a;
+}
+
+#accountForm h1 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+#accountForm h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    border-bottom: dashed gray 2px;
+}
+
+#accountForm p {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+}
+
+.accountInformation {
+    margin: 0;
+    padding: 0;
+}
+
+.accountInformation label {
+    display: block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.accountInformation input {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 0 0.5rem;
+    color: black;
+}
+
+.interestsGroup {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 1rem;
+}
+
+.interestsGroup legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.interests-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.interestCheckboxOptions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.interestCheckboxOptions input {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-submit {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    margin-top: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: white;
+}
+
+.notification {
+    font-weight: lighter;
+    font-style: italic;
+    color: gray
+}
+
+/******************************************************
+* SHARED FOOTER ARCHITECTURE
+******************************************************/
+footer {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #1a1a1a;
+    border-top: solid orange 0.5px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+}
+
+footer p {
+    margin: 0.5rem;
+}
+
+.footer_Col {
+    border-right: solid 0.5px orange;
+}
+
+.footer_Col h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.footer_Col h4 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.footer_Col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_Col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer_Col a {
+    color: gray;
+    text-decoration: none;
+}
+
+.footer_Col a:hover {
+    color: orange;
+}
+
+
+/******************************************************
+* EFFECTS
+******************************************************/
+
+/* For movement */
+@keyframes pulse-glow {
+    0% {
+        transform: scale(1);
+        color: orange;
+    }
+
+    50% {
+        transform: scale(1.1);
+        color: black;
+    }
+}
+
+.animated {
+    /* name | duration | timing-function | iteration-count */
+    animation: pulse-glow 1s ease-in-out infinite;
+}
+
+
+/******************************************************
+* TEMPORAL MESSAGE
+******************************************************/
+
+.temporal-message {
+    /* Positioning */
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999;
+    height: auto;
+    width: 15rem;
+    max-width: 90%;
+
+    /* Styling */
+    background-color: rgb(240, 191, 99);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-family: 'Courier New', Courier, monospace;
+
+    /* Animation */
+    animation: slideIn 0.3s ease-out;
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+.temporal-message ul {
+    padding-left: 20px;
+    /* Indent list items */
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.temporal-message ul li {
+    margin-bottom: 15px;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(900px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/******************************************************
+* TEMPORAL BUTTON PORTFOLIO
+******************************************************/
+.portfolio-button {
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+.portfolio-button:hover {
+    background-color: black;
+    color: gold;
+}
+.portfolio-button a{
+    text-decoration: none;
+    color: #1a202c;
+}
+.portfolio-button a:hover{
+    color: gold;
+}
+

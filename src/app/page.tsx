@@ -235,7 +235,12 @@ export default function Home() {
                         <p className="text-gray-300 text-base leading-relaxed">
                           {selectedProject.description}
                         </p>
-                        <Link href={selectedProject.project_name === "WBC Store" ? "/wbc_store/index.html" : ""} className="text-secondary hover:text-gray-500 underline transition duration-300">
+                        <Link
+                          href={
+                            selectedProject.project_name === "EasyPassword" ? "/easypass/index.html" :
+                            selectedProject.project_name === "WBC Store" ? "/wbc_store/index.html" :
+                            "/" }
+                          className="text-secondary hover:text-gray-500 underline transition duration-300">
                         Explore the project
                         </Link>
                       </div>

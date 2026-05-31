@@ -14,11 +14,10 @@ export async function GET() {
   }
 
   try {
-    const products = await stripe.products.list({
-      limit: 3,
-      expand: ['data.default_price'],
-    });
-
+        const products = await stripe.products.list({
+        limit: 3,
+        expand: ['data.default_price', 'data.marketing_features'], 
+      })
     return NextResponse.json(products.data, { status: 200 });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);

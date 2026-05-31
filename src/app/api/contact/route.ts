@@ -28,10 +28,14 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true }, { status: 200 });
 
-  } catch (error) {
-    return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
-  }
+  // Temporarily change your catch block to this:
+} catch (error: any) {
+  return NextResponse.json(
+    { 
+      error: "Backend crashed!", 
+      details: error?.message || String(error) 
+    },
+    { status: 500 }
+  );
+}
 }

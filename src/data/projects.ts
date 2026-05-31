@@ -11,7 +11,7 @@ export const projects =[
  },
  {
     id:3,
-    project_name: "EasyPass",
+    project_name: "EasyPassword",
     description: "EasyPass is a web application that simulates a  Password Manager service. It integrates professional grade tools to handle real world scenarios: dynamic product management via Stripe, real-time data fetching through RSS feeds, and a secure administrative backend for transaction tracking."
  }
 ]

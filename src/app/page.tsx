@@ -37,7 +37,7 @@ export default function Home() {
           Full Stack Software Developer
         </h2>
         <p className="text-lg text-gray-400 max-w-4xl leading-relaxed">
-          I am a Toronto-based Full Stack Software Developer with over 15 years of experience in the IT industry. My unique professional background combines years of leadership as a Scrum Master and Project Manager at global organizations like Walmart, TATA and Scotiabank with a deep passion for building modern web and mobile solutions, always guided by SOLID, KISS, and DRY principles. I specialize in the full Software Development Life Cycle—from gathering requirements with stakeholders to moving solutions into production—bridging the gap between high-level project management and robust software engineering. </p>
+        Full Stack Developer with over 10 years of IT experience delivering technology solutions for global organizations, such as Walmart International and Scotiabank. Combines software development expertise with leadership in Agile delivery, stakeholder management, and cross-functional collaboration. Experienced across the Software Development Life Cycle (SDLC), from requirements analysis and solution design to production support. Contributed to the migration of enterprise applications from IBM DataStage to Java, helping reduce processing time for associate and store information from 24 hours to approximately 30 minutes.           </p>
         <div className="w-full mt-8 grid grid-cols-4 lg:flex lg:flex-row lg:justify-center lg:items-start gap-4">
           {technologies.map((technology) => (
             <div key={technology.id} className="flex flex-col items-center text-center gap-2 ">

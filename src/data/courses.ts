@@ -43,6 +43,34 @@ export const courses = [
         id:9,
         name:"Java OOO",
         path:"/courses/javaOOO.png"
+    },
+    {
+        id:10,
+        name:"AI Fundamentals by IBM",
+        path:"/courses/ibmAiFundamentals.png"
+    },
+
+    {
+        id:11,
+        name:"Js Essentials",
+        path:"/courses/jsEssentials.png"
+    },
+    {
+        id:12,
+        name:"AI Agent Security",
+        path:"/courses/supplyAgentSecurity.png"
+    },
+
+    {
+        id:13,
+        name:"AI Agent UX",
+        path:"/courses/supplyAgentUX.png"
+    
+    },
+    {
+        id:14,
+        name:"AI T-Shirt Design",
+        path:"/courses/smartTshirtDesign.png"
     }
 
 ]
